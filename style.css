@@ -1,0 +1,311 @@
+/* ===== 色の設定 ===== */
+:root {
+    --bg: #ffffff;
+    --surface: #f5f7fa;
+    --text: #1f2328;
+    --muted: #6b7280;
+    --accent: #0e9f93;
+    --border: #e1e5ea;
+}
+
+/* ===== 全体 ===== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 20px 16px 40px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "BIZ UDPGothic", "Meiryo", "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+p {
+    margin: 6px 0;
+}
+
+/* ===== ナビゲーション ===== */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 8px 0;
+    background: var(--bg);
+    border-bottom: 2px solid var(--text);
+}
+
+nav a {
+    font-family: "Consolas", "BIZ UDGothic", monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 4px 10px;
+    margin-right: 0;
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition: none;
+}
+
+nav a:hover {
+    color: var(--text);
+    background: var(--surface);
+    border-color: var(--border);
+    text-decoration: none;
+}
+
+nav a.active {
+    color: #ffffff;
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+/* ===== 見出し ===== */
+h1 {
+    font-family: "Consolas", "Meiryo", monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    margin: 20px 0 12px;
+    padding-left: 12px;
+    border-left: 6px solid var(--accent);
+}
+
+h2 {
+    font-family: "Consolas", "Meiryo", monospace;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 32px 0 12px;
+    padding: 6px 10px;
+    background: var(--surface);
+    border-left: 4px solid var(--text);
+    border-bottom: 2px solid var(--border);
+    scroll-margin-top: 56px;
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 24px 0 8px;
+    padding: 4px 10px;
+    border-left: 4px solid var(--accent);
+    border-bottom: 1px solid var(--border);
+}
+
+h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 12px 0 4px;
+}
+
+/* ===== リンク ===== */
+a {
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    margin-right: 12px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ===== リスト ===== */
+ul {
+    margin: 6px 0;
+    padding-left: 1.4em;
+}
+
+li {
+    margin: 2px 0;
+}
+
+li::marker {
+    color: var(--accent);
+}
+
+/* ===== 画像 ===== */
+.work-images {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.work-images img {
+    flex: 1 1 0;
+    min-width: 0;
+    width: 100%;
+    height: 165px;
+    object-fit: contain;
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 0;
+    cursor: zoom-in;
+}
+
+.work-images img:hover {
+    /* 拡大させず枠線色だけ変える */
+    border-color: var(--accent);
+}
+
+/* ===== 動画 ===== */
+.game-video {
+    margin: 8px 0;
+}
+
+.game-video iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 2px solid var(--border);
+    border-radius: 0;
+}
+
+/* ===== 詳細ボタン・表 ===== */
+details {
+    margin-top: 8px;
+}
+
+summary {
+    display: inline-block;
+    padding: 4px 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--surface);
+    border: 1px solid var(--accent);
+}
+
+summary:hover {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+table {
+    width: 100%;
+    margin-top: 8px;
+    border-collapse: collapse;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    font-size: 0.92rem;
+}
+
+th,
+td {
+    padding: 7px 10px;
+    border: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    width: 24%;
+    background: var(--surface);
+    color: var(--text);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* ===== ライトボックス ===== */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    cursor: zoom-out;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border: none;
+    border-radius: 0;
+}
+
+.lb-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    border: 2px solid var(--accent);
+    background: var(--accent);
+    color: var(--text);
+    font-family: "Consolas", monospace;
+    font-size: 1.4rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.lb-btn:hover {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+.lb-prev {
+    left: 16px;
+}
+
+.lb-next {
+    right: 16px;
+}
+
+/* ===== スマホ対応 ===== */
+@media (max-width: 600px) {
+    body {
+        padding: 12px 12px 32px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        margin-top: 24px;
+    }
+
+    th,
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    th {
+        border-bottom: none;
+        padding-bottom: 4px;
+    }
+
+    .work-images {
+        overflow-x: auto;
+    }
+
+    .work-images img {
+        flex: 0 0 75%;
+        height: 150px;
+    }
+}
